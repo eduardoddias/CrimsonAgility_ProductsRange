@@ -1,0 +1,77 @@
+<?php declare(strict_types=1);
+/** @var Magento\Framework\View\Element\Template $block */
+?>
+
+<div id="products-range" data-bind="scope:'products-range'">
+    <div class="no-display" data-bind="css: {'no-display': false}">
+        <form id="products-range-form"
+              name="products-range"
+              data-mage-init='{"validation": {}}'
+              action="<?= $block->getUrL('customer/products/rangeData') ?>">
+            <legend class="legend">
+                <span><?= __('Search Products in a Range') ?></span>
+            </legend>
+            <fieldset class="fieldset">
+                <div class="field field-from-price required">
+                    <label class="label" for="price-from"><span><?= __('From Price') ?></span></label>
+                    <div class="control">
+                        <input type="text"
+                               id="price-from"
+                               name="price-from"
+                               class="input-text required-entry validate-number validate-greater-than-zero"
+                               data-bind="value: fromPrice"
+                        />
+                    </div>
+                </div>
+
+                <div class="field field-to-price required">
+                    <label class="label" for="price-to"><span><?= __('To Price') ?></span></label>
+                    <div class="control">
+                        <input type="text" id="price-to" name="price-to" class="input-text required-entry"/>
+                    </div>
+                </div>
+
+                <div class="field field-sort-order required">
+                    <label class="label" for="sort-order"><span><?= __('Sort Order') ?></span></label>
+                    <div class="control">
+                        <select name="sort-order" id="sort-order" class="select">
+                            <option value="price_low_to_high"><?= __('Ascending') ?></option>
+                            <option value="price_high_to_low"><?= __('Descending') ?></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="button" class="action primary" data-bind="click: search">
+                        <span><?= __('Search') ?></span>
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+
+        <!-- ko if: searched() && !productsResult() -->
+        <div class="no-results">
+            <?= __("We can't find any items matching these search criteria.") ?>
+        </div>
+        <!-- /ko -->
+
+
+        <div class="products-result" data-bind="html: productsResult()">
+            <!--ko html: productsResult() --><!-- /ko -->
+        </div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#products-range": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "products-range": {
+                        "component": "CrimsonAgility_ProductsRange/js/products-range"
+                    }
+                }
+            }
+        }
+    }
+</script>
