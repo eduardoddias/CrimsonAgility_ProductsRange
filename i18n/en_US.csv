@@ -1,0 +1,21 @@
+"The ""To Price"" could not be greater than 5x the ""From Price"".","The ""To Price"" could not be greater than 5x the ""From Price""."
+"Invalid data.","Invalid data."
+"Search Products in a Range","Search Products in a Range"
+"From Price","From Price"
+"To Price","To Price"
+"Sort Order","Sort Order"
+Ascending,Ascending
+Descending,Descending
+Search,Search
+"We can't find any items matching these search criteria.","We can't find any items matching these search criteria."
+"SKU: %1 - QTY: %2","SKU: %1 - QTY: %2"
+"SKU: %1","SKU: %1"
+"Add to Cart","Add to Cart"
+"In stock","In stock"
+"Out of stock","Out of stock"
+"Add to Wish List","Add to Wish List"
+"Add to Compare","Add to Compare"
+"Please enter a value between {0} and {1}.","Please enter a value between {0} and {1}."
+"Search Products In Range","Search Products In Range"
+"Products In Range","Products In Range"
+"View Product","View Product"

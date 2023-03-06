@@ -1,0 +1,20 @@
+{
+  "name": "crimson-agility/module-products-range",
+  "version": "1.0.0",
+  "description": "N/A",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "CrimsonAgility\\ProductsRange\\": ""
+    }
+  }
+}
